@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.PaymentFragment">
+
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your card details below"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@id/card_name_txt"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/card_name_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="15sp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/instruction"
+        app:layout_constraintTop_toTopOf="@id/instruction"
+        app:layout_constraintStart_toStartOf="@id/instruction"
+        />
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_txt"
+        android:hint="Name on the card"
+        android:padding="10dp"
+        android:textColorHint="#7A7070"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/card_num_txt"
+        app:layout_constraintTop_toBottomOf="@id/card_name_txt"
+        android:paddingHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        />
+
+    <TextView
+        android:id="@+id/card_num_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/name"
+app:layout_constraintTop_toBottomOf="@id/name"
+
+    />
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_txt"
+        android:hint="Number on card"
+        android:padding="10dp"
+        android:textColorHint="#7A7070"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/expiry_txt"
+        app:layout_constraintTop_toBottomOf="@id/card_num_txt"
+        android:paddingHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        />
+
+    <TextView
+        android:id="@+id/expiry_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Expiration date"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/number"
+        app:layout_constraintTop_toBottomOf="@id/number" />
+
+    <EditText
+        android:id="@+id/expiry"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_txt"
+        android:hint="Month/Year"
+        android:padding="10dp"
+        android:textColorHint="#7A7070"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expiry_txt"
+        android:layout_marginVertical="10dp"
+        />
+
+    <TextView
+        android:id="@+id/cvv_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CVV"
+        android:textSize="15sp"
+        app:layout_constraintTop_toTopOf="@id/expiry_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/expiry_txt"
+app:layout_constraintStart_toEndOf="@id/expiry"
+        app:layout_constraintEnd_toEndOf="@id/number"/>
+
+    <EditText
+        android:id="@+id/cvv"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_txt"
+        android:hint="card CVV"
+        android:padding="10dp"
+        android:textColorHint="#7A7070"
+        android:inputType="textPersonName"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="@id/cvv_txt"
+        app:layout_constraintEnd_toEndOf="@id/number"
+        app:layout_constraintTop_toBottomOf="@id/cvv_txt"
+        android:layout_marginVertical="10dp"
+        />
+
+    <TextView
+        android:id="@+id/save_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save card for future payment"
+        android:textSize="15sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@id/expiry"
+        app:layout_constraintTop_toBottomOf="@id/expiry"/>
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/save_txt"
+        app:layout_constraintBottom_toBottomOf="@id/save_txt"
+        app:layout_constraintEnd_toEndOf="@id/cvv"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signup_btn"
+        android:layout_width="267dp"
+        android:layout_height="61dp"
+        app:layout_constraintTop_toBottomOf="@id/save_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Get started"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
